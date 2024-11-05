@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .footer {
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Estimado(a) ciudadano(a),</p>
+        <p th:text="${mensaje}"></p>
+        <div class="footer">
+            <p>Este es un mensaje automático, por favor no responder.</p>
+        </div>
+    </div>
+</body>
+
+</html>
