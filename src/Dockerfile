@@ -7,6 +7,8 @@ WORKDIR /app
 # Copiar el archivo JAR generado
 COPY build/libs/SIAC-0.0.1-SNAPSHOT.jar app.jar
 
+COPY .env /app/.env
+
 # Copiar el archivo de configuración application.properties al contenedor
 COPY src/main/resources/application.properties /app/application.properties
 

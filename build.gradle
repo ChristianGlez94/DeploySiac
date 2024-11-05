@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.4'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'com.google.cloud.tools.jib' version '3.4.4'
 }
 
 group = 'com.siac070'
@@ -12,6 +13,19 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
+
+jib {
+    to {
+        image = 'christian9409/siac:latest'
+    }
+    container {
+        ports = ['8080']
+        environment = [
+            'SPRING_PROFILES_ACTIVE': 'prod'
+        ]
+    }
+}
+
 
 configurations {
 	compileOnly {
@@ -57,6 +71,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	implementation 'net.coobird:thumbnailator:0.4.8' // Asegúrate de que esté esta línea
+	implementation 'org.postgresql:postgresql:42.6.0' // o la última versión estable
 
 }
 
